@@ -2,7 +2,6 @@ import { Component } from "react";
 import Controls from "./controls";
 import Statistic from "./Statistic";
 import Section from "./Section";
-// import css from "./Feedback.module.css"
 
 export class Feedback extends Component {
     static defaultProps = {
