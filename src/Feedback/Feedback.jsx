@@ -2,6 +2,7 @@ import { Component } from "react";
 import Controls from "./controls";
 import Statistic from "./Statistic";
 import Section from "./Section";
+import Notifycation from "./Notifycation";
 
 export class Feedback extends Component {
   
@@ -44,7 +45,8 @@ countTotalFeedback() {
           <>
               <Section title="Please leave feedback">
                    <Controls onIncrement={onIncrement} options={Object.keys(this.state)} />
-                   <Statistic good={good} neutral={neutral} bad={bad} total={total} totalPercent={totalPercent}/>
+                  {total ? <Statistic good={good} neutral={neutral} bad={bad} total={total} totalPercent={totalPercent} /> :
+                           <Notifycation message={"There is no feedback"} />}
               </Section>
             
           </>
