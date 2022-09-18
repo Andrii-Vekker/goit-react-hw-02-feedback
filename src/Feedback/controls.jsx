@@ -1,17 +1,17 @@
 import { ControlsBox, BtnStyles } from "./Controls.styled";
 import PropTypes from 'prop-types';
 
-export default function Controls({onIncrement}) {
+export default function Controls({ onIncrement, options }) {
     return (
         <ControlsBox>
-            <BtnStyles type="button" name="good" onClick={onIncrement}>Good</BtnStyles>
-            <BtnStyles type="button" name="neutral" onClick={onIncrement}>Neutral</BtnStyles>
-            <BtnStyles type="button" name="bad" onClick={onIncrement}> Bad</BtnStyles>
+            {options.map((option) => <BtnStyles key={option} type="button" name={option} onClick={onIncrement}>{option}</BtnStyles>)}
         </ControlsBox>
   );
 };
 
 
 Controls.propTypes = {
-    onIncrement: PropTypes.func.isRequired
-}
+    onIncrement: PropTypes.func.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
+
+};

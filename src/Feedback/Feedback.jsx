@@ -1,13 +1,10 @@
 import { Component } from "react";
-import PropTypes from 'prop-types';
 import Controls from "./controls";
 import Statistic from "./Statistic";
 import Section from "./Section";
 
 export class Feedback extends Component {
-    static defaultProps = {
-        initialValue: 0
-    };
+  
     state = {
         good: 0,
         neutral: 0,
@@ -46,7 +43,7 @@ countTotalFeedback() {
       return (
           <>
               <Section title="Please leave feedback">
-                   <Controls onIncrement={onIncrement}/>
+                   <Controls onIncrement={onIncrement} options={Object.keys(this.state)} />
                    <Statistic good={good} neutral={neutral} bad={bad} total={total} totalPercent={totalPercent}/>
               </Section>
             
