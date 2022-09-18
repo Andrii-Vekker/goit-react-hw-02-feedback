@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from 'prop-types';
 import Controls from "./controls";
 import Statistic from "./Statistic";
 import Section from "./Section";
@@ -53,4 +54,6 @@ countTotalFeedback() {
       );
     };
 };
+
+  
 
