@@ -1,4 +1,5 @@
 import { ControlsBox, BtnStyles } from "./Controls.styled";
+import PropTypes from 'prop-types';
 
 export default function Controls({onIncrement}) {
     return (
@@ -9,3 +10,8 @@ export default function Controls({onIncrement}) {
         </ControlsBox>
   );
 };
+
+
+Controls.propTypes = {
+    onIncrement: PropTypes.func.isRequired
+}

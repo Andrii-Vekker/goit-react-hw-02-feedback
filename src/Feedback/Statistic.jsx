@@ -1,4 +1,5 @@
 import Notifycation from "./Notifycation";
+import PropTypes from 'prop-types';
 
 export default function Statistic({good, neutral, bad, total, totalPercent}) {
     return (
@@ -13,3 +14,11 @@ export default function Statistic({good, neutral, bad, total, totalPercent}) {
         </>
     );
 };
+
+Statistic.propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+    total: PropTypes.number.isRequired,
+    totalPercent: PropTypes.number.isRequired,
+}

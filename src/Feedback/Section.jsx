@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 
-
-export default function Section({title, children}) {
+export default function Section({ title, children }) {
   return (
     <>
       <h2>{title}</h2>
@@ -8,3 +8,12 @@ export default function Section({title, children}) {
     </>
   );
 };
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(
+    PropTypes.element.isRequired
+  )
+}
+
+
